@@ -1,5 +1,6 @@
 namespace SpriteKind {
     export const cpu = SpriteKind.create()
+    export const ITEM = SpriteKind.create()
 }
 namespace myTiles {
     //% blockIdentity=images._tile
@@ -306,7 +307,134 @@ d d d d e e e e e e e e d d d d
 d d d d e e e e e e e e d d d d 
 d d d d e e e e e e e e d d d d 
 `
+    //% blockIdentity=images._tile
+    export const tile18 = img`
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d b b d d d d d d d 
+d d d d d d d b b b d d d d d d 
+d d d d d d d d b b b d d d d d 
+d d d d d d d b d b b d d d d d 
+d d d d d d b d d d d d d d d d 
+d d d d d b d d d d d d d d d d 
+d d d e e e e e e e e e e d d d 
+d d d d e e e e e e e e d d d d 
+d d d d e e e e e e e e d d d d 
+d d d d e e e e e e e e d d d d 
+d d d d e e e e e e e e d d d d 
+d d d d e e e e e e e e d d d d 
+d d d d e e e e e e e e d d d d 
+`
+    //% blockIdentity=images._tile
+    export const tile19 = img`
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 e e e e e e e 7 7 7 7 7 
+7 7 7 e e e e e e f e e 7 7 7 7 
+7 7 e e e e e e e e e e e 7 7 7 
+7 e e e e e e e e e e e e e 7 7 
+7 e 6 6 6 e 6 6 6 e 6 6 6 e 7 7 
+7 e e 6 e e e 6 e e e 6 e e 7 7 
+7 e e 6 e e e 6 e e e 6 e e 7 7 
+7 e e e e e e e e e e e e e 7 7 
+7 e e e e f e e e e e e e e 7 7 
+7 e e e e e 6 6 6 e e e e e 7 7 
+7 7 e e e e e 6 e e e e e 7 7 7 
+7 7 7 e e e e 6 e e f e 7 7 7 7 
+7 7 7 7 e e e e e e e 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+`
+    //% blockIdentity=images._tile
+    export const tile20 = img`
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 e e e e e e e 7 7 7 7 7 
+7 7 7 e e e e e e f e e 7 7 7 7 
+7 7 e e e e e e e e e e e 7 7 7 
+7 e e e e e e e e e e e e e 7 7 
+7 e e e e e e e e e e e e e 7 7 
+7 e e 6 e e e 6 e e e 6 e e 7 7 
+7 e e 6 e e e 6 e e e 6 e e 7 7 
+7 e e e e e e e e e e e e e 7 7 
+7 e e e e f e e e e e e e e 7 7 
+7 e e e e e e e e e e e e e 7 7 
+7 7 e e e e e 6 e e e e e 7 7 7 
+7 7 7 e e e e 6 e e f e 7 7 7 7 
+7 7 7 7 e e e e e e e 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+`
+    //% blockIdentity=images._tile
+    export const tile21 = img`
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 e e e e e e e 7 7 7 7 7 
+7 7 7 e e e e e e f e e 7 7 7 7 
+7 7 e e e e e e e e e e e 7 7 7 
+7 e e e e e e e e e e e e e 7 7 
+7 e e e e e e e e e e e e e 7 7 
+7 e e e e e e e e e e e e e 7 7 
+7 e e 6 e e e 6 e e e 6 e e 7 7 
+7 e e e e e e e e e e e e e 7 7 
+7 e e e e f e e e e e e e e 7 7 
+7 e e e e e e e e e e e e e 7 7 
+7 7 e e e e e e e e e e e 7 7 7 
+7 7 7 e e e e 6 e e f e 7 7 7 7 
+7 7 7 7 e e e e e e e 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+`
+    //% blockIdentity=images._tile
+    export const tile22 = img`
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 e e e e e e e 7 7 7 7 7 
+7 7 7 e e e e e e f e e 7 7 7 7 
+7 7 e e e e e e e e e e e 7 7 7 
+7 e e 4 e e e 4 e e e 4 e e 7 7 
+7 e 6 6 6 e 6 6 6 e 6 6 6 e 7 7 
+7 e e 6 e e e 6 e e e 6 e e 7 7 
+7 e e 6 e e e 6 e e e 6 e e 7 7 
+7 e e e e e e e e e e e e e 7 7 
+7 e e e e f e 4 e e e e e e 7 7 
+7 e e e e e 6 6 6 e e e e e 7 7 
+7 7 e e e e e 6 e e e e e 7 7 7 
+7 7 7 e e e e 6 e e f e 7 7 7 7 
+7 7 7 7 e e e e e e e 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+`
 }
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (sprites.readDataString(item, "thing") == "watering can") {
+        mySprite.setImage(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . e e e e . . . . . . 
+. . . . . e d d d d e . . . . . 
+. . . . e d f d d f d e . . . . 
+. . . . e d f d d f d e . . . . 
+. . . . . d d d d d d . . b . . 
+. . . . 5 5 5 5 5 5 5 5 d b b b 
+. . . . d 5 5 5 5 5 5 . . b b . 
+. . . . . 6 6 6 6 6 6 . . . . . 
+. . . . . . 6 . . 6 . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`)
+        if (mySprite.tileKindAt(TileDirection.Center, myTiles.tile7)) {
+            tiles.setTileAt(tilemap.locationOfSprite(mySprite), myTiles.tile20)
+            locashon = tilemap.locationOfSprite(mySprite)
+            pause(500)
+            tiles.setTileAt(locashon, myTiles.tile20)
+            pause(500)
+            tiles.setTileAt(locashon, myTiles.tile19)
+            pause(500)
+            tiles.setTileAt(locashon, myTiles.tile22)
+        }
+    }
+})
 function cpus () {
     dad = sprites.create(img`
 . . . . e e e e e e . . . . . . 
@@ -331,8 +459,8 @@ function cpus () {
     mom = sprites.create(img`
 . . . . e e e e e e . . . . . . 
 . . . e d d d d d d e . . . . . 
-. . . d d f d d f d d . . . . . 
-. . . d d f d d f d d . . . . . 
+. . e d d f d d f d d e . . . . 
+. . e d d f d d f d d e . . . . 
 . . . d d d d d d d d . . . . . 
 . . 3 3 3 3 3 3 3 3 3 3 . . . . 
 . . d 3 3 3 3 3 3 3 3 d . . . . 
@@ -404,6 +532,24 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.cpu, function (sprite, otherSpri
     }
 })
 function start () {
+    item = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.ITEM)
     name = game.askForString("name", 12)
     mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
@@ -423,6 +569,7 @@ function start () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
+    sprites.setDataString(item, "thing", "w")
     scene.setBackgroundColor(7)
     tiles.setTilemap(tiles.createTilemap(
             hex`1e001000050505050505090a05050505050505050e0e0e0e0e0e0e0e0e0e0e0e0e1f1515151515151717151515151515151515151515151515151515151515151410141414140708000100000100000000000000000000000000001c1c1c0000000100000708000100000000000000000000001800111213001c1c1c00000000000007060c0c0c0c0c0c0c0c0c0c0c0c0c0c00000000001c1c1c000e000000000b0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d00000000001c1c1c0000000000000000000000000001000000000000000000000000001c1c1c00000000010000000e0000000000000000000000000000000000001c1c1c0000000100000000000005010000000000000000000000000000001c1c1c0404040404040400000000000000000000000000000000000000001c1c1c0303030303030404040404040404040404040404000000000000001d1d1d0303030303030303030303030303030303030304040404040404041c1c1c030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303`,
@@ -444,7 +591,7 @@ function start () {
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
 `,
-            [myTiles.tile0,sprites.castle.tileGrass1,sprites.castle.tileGrass3,myTiles.tile1,myTiles.tile2,sprites.builtin.forestTiles0,sprites.castle.tilePath5,sprites.castle.tilePath4,sprites.castle.tilePath6,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.castle.tilePath7,sprites.castle.tilePath2,sprites.castle.tilePath8,sprites.castle.tileGrass2,sprites.castle.tilePath3,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile16,sprites.castle.saplingOak,sprites.castle.rock1,myTiles.tile17,sprites.dungeon.floorDark2],
+            [myTiles.tile0,sprites.castle.tileGrass1,sprites.castle.tileGrass3,myTiles.tile1,myTiles.tile2,sprites.builtin.forestTiles0,sprites.castle.tilePath5,sprites.castle.tilePath4,sprites.castle.tilePath6,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.castle.tilePath7,sprites.castle.tilePath2,sprites.castle.tilePath8,sprites.castle.tileGrass2,sprites.castle.tilePath3,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile16,sprites.castle.saplingOak,sprites.castle.rock1,myTiles.tile17,sprites.dungeon.floorDark2,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile21,myTiles.tile22],
             TileScale.Sixteen
         ))
     scene.cameraFollowSprite(mySprite)
@@ -511,7 +658,7 @@ function house () {
             mySprite2.setFlag(SpriteFlag.Ghost, true)
             tiles.placeOnTile(mySprite, tiles.getTileLocation(6, 5))
             tiles.setTilemap(tiles.createTilemap(
-            hex`10001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001918181a181818000000000000000000191c1c1c1c1c19000000000000000000191c0f10111c19000000000000000000191c1217161c19000000000000000000191c1217161c19000000000000000000191c1217161c19000000000000000000191c1217161c19000000000000000000191c1314151c19000000000000000000191d1c1c1c1c19000000000000000000181818181818180000000000000000000000000000000000000000000000000000000000000000000000000000`,
+            hex`10001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001918181a181818000000000000000000191c1c1c1c1c19000000000000000000191c0f10111c19000000000000000000191c1217161c19000000000000000000191c1217161c19000000000000000000191c1217161c19000000000000000000191c1217161c19000000000000000000191c1314151c19000000000000000000191d1c1c1c1e19000000000000000000181818181818180000000000000000000000000000000000000000000000000000000000000000000000000000`,
             img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -530,7 +677,7 @@ function house () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `,
-            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,sprites.dungeon.greenOuterNorth0,sprites.dungeon.greenOuterNorthWest,sprites.dungeon.floorDark3,sprites.dungeon.darkGroundNorthWest0,sprites.dungeon.darkGroundNorth,sprites.dungeon.darkGroundNorthEast0,sprites.dungeon.darkGroundWest,sprites.dungeon.darkGroundSouthWest0,sprites.dungeon.darkGroundSouth,sprites.dungeon.darkGroundSouthEast0,sprites.dungeon.darkGroundEast,sprites.dungeon.darkGroundCenter,myTiles.tile12,myTiles.tile13,myTiles.tile16,sprites.dungeon.floorDark0,sprites.dungeon.floorDark2,myTiles.tile17],
+            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,sprites.dungeon.greenOuterNorth0,sprites.dungeon.greenOuterNorthWest,sprites.dungeon.floorDark3,sprites.dungeon.darkGroundNorthWest0,sprites.dungeon.darkGroundNorth,sprites.dungeon.darkGroundNorthEast0,sprites.dungeon.darkGroundWest,sprites.dungeon.darkGroundSouthWest0,sprites.dungeon.darkGroundSouth,sprites.dungeon.darkGroundSouthEast0,sprites.dungeon.darkGroundEast,sprites.dungeon.darkGroundCenter,myTiles.tile12,myTiles.tile13,myTiles.tile16,sprites.dungeon.floorDark0,sprites.dungeon.floorDark2,myTiles.tile17,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile21,myTiles.tile22],
             TileScale.Sixteen
         ))
             scene.setBackgroundColor(15)
@@ -570,7 +717,7 @@ function house () {
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
 `,
-            [myTiles.tile0,sprites.castle.tileGrass1,sprites.castle.tileGrass3,myTiles.tile1,myTiles.tile2,sprites.builtin.forestTiles0,sprites.castle.tilePath5,sprites.castle.tilePath4,sprites.castle.tilePath6,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.castle.tilePath7,sprites.castle.tilePath2,sprites.castle.tilePath8,sprites.castle.tileGrass2,sprites.castle.tilePath3,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile16,sprites.castle.saplingOak,sprites.castle.rock1,myTiles.tile17],
+            [myTiles.tile0,sprites.castle.tileGrass1,sprites.castle.tileGrass3,myTiles.tile1,myTiles.tile2,sprites.builtin.forestTiles0,sprites.castle.tilePath5,sprites.castle.tilePath4,sprites.castle.tilePath6,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.castle.tilePath7,sprites.castle.tilePath2,sprites.castle.tilePath8,sprites.castle.tileGrass2,sprites.castle.tilePath3,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile16,sprites.castle.saplingOak,sprites.castle.rock1,myTiles.tile17,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile21,myTiles.tile22],
             TileScale.Sixteen
         ))
                 scene.setBackgroundColor(7)
@@ -593,21 +740,27 @@ function house () {
         }
     }
 }
-function tilemaps (myImage: Image, mySprite: Sprite, myImage2: Image) {
-	
+function tilemaps (myImage: Image, mySprite: Sprite, myImage2: Image, COOL_STUFF: string) {
+    if (mySprite.tileKindAt(TileDirection.Center, myImage)) {
+        tiles.setTileAt(tilemap.locationOfSprite(mySprite), myImage2)
+        sprites.setDataString(item, "thing", COOL_STUFF)
+        game.splash("You got a " + COOL_STUFF + ".")
+    }
 }
 let statusbar: StatusBarSprite = null
 let mySprite2: Sprite = null
-let mySprite: Sprite = null
 let name = ""
 let Quest = ""
 let mom: Sprite = null
 let dad: Sprite = null
+let locashon: tiles.Location = null
+let mySprite: Sprite = null
+let item: Sprite = null
 start()
 cpus()
 forever(function () {
     house()
-    tilemaps(myTiles.tile17, mySprite, sprites.dungeon.floorDark2)
+    tilemaps(myTiles.tile17, mySprite, sprites.dungeon.floorDark2, "watering can")
 })
 forever(function () {
     music.playTone(880, music.beat(BeatFraction.Half))
