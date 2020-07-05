@@ -309,22 +309,22 @@ d d d d e e e e e e e e d d d d
 `
     //% blockIdentity=images._tile
     export const tile18 = img`
-d d d d d d d d d d d d d d d d 
-d d d d d d d d d d d d d d d d 
-d d d d d d d d d d d d d d d d 
-d d d d d d d b b d d d d d d d 
-d d d d d d d b b b d d d d d d 
-d d d d d d d d b b b d d d d d 
-d d d d d d d b d b b d d d d d 
-d d d d d d b d d d d d d d d d 
-d d d d d b d d d d d d d d d d 
-d d d e e e e e e e e e e d d d 
-d d d d e e e e e e e e d d d d 
-d d d d e e e e e e e e d d d d 
-d d d d e e e e e e e e d d d d 
-d d d d e e e e e e e e d d d d 
-d d d d e e e e e e e e d d d d 
-d d d d e e e e e e e e d d d d 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . b b . . . . . . . 
+. . . . . . . b b b . . . . . . 
+. . . . . . . . b b b . . . . . 
+. . . . . . . b . b b . . . . . 
+. . . . . . b . . . . . . . . . 
+. . . . . b . . . . . . . . . . 
+. . . e e e e e e e e e e . . . 
+. . . . e e e e e e e e . . . . 
+. . . . e e e e e e e e . . . . 
+. . . . e e e e e e e e . . . . 
+. . . . e e e e e e e e . . . . 
+. . . . e e e e e e e e . . . . 
+. . . . e e e e e e e e . . . . 
 `
     //% blockIdentity=images._tile
     export const tile19 = img`
@@ -426,12 +426,42 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         if (mySprite.tileKindAt(TileDirection.Center, myTiles.tile7)) {
             tiles.setTileAt(tilemap.locationOfSprite(mySprite), myTiles.tile20)
             locashon = tilemap.locationOfSprite(mySprite)
-            pause(500)
+            pause(1000)
             tiles.setTileAt(locashon, myTiles.tile20)
-            pause(500)
+            pause(1000)
             tiles.setTileAt(locashon, myTiles.tile19)
-            pause(500)
+            pause(1000)
             tiles.setTileAt(locashon, myTiles.tile22)
+            if (Quest == "Quest 2") {
+                if (tilemap.tileIs(tiles.getTileLocation(0, 2), myTiles.tile22) && tilemap.tileIs(tiles.getTileLocation(5, 2), myTiles.tile22) && tilemap.tileIs(tiles.getTileLocation(2, 2), myTiles.tile22) && tilemap.tileIs(tiles.getTileLocation(3, 2), myTiles.tile22) && tilemap.tileIs(tiles.getTileLocation(4, 2), myTiles.tile22)) {
+                    game.showLongText("you watered all the flowers", DialogLayout.Top)
+                    Quest = "Quest 3"
+                }
+            }
+        }
+    }
+    if (sprites.readDataString(item, "thing") == "hammer") {
+        mySprite.setImage(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . e e e e . . . . . . 
+. . . . . e d d d d e . . . . . 
+. . . . e d f d d f d e b b b . 
+. . . . e d f d d f d e b b b . 
+. . . . . d d d d d d . . b . . 
+. . . . 5 5 5 5 5 5 5 5 d b . . 
+. . . . d 5 5 5 5 5 5 . . b . . 
+. . . . . 6 6 6 6 6 6 . . . . . 
+. . . . . . 6 . . 6 . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`)
+        if (mySprite.tileKindAt(TileDirection.Right, sprites.castle.rock1)) {
+            tiles.setTileAt(tilemap.locationInDirection(tilemap.locationOfSprite(mySprite), CollisionDirection.Right), myTiles.tile7)
+            tiles.setWallAt(tilemap.locationInDirection(tilemap.locationOfSprite(mySprite), CollisionDirection.Right), false)
         }
     }
 })
@@ -474,12 +504,34 @@ function cpus () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.cpu)
-    sprites.setDataBoolean(mom, "mom", true)
+    sprites.setDataString(dad, "npc", "dad")
+    sprites.setDataString(mom, "npc", "mom")
     tiles.placeOnTile(mom, tiles.getTileLocation(8, 8))
     dad.setFlag(SpriteFlag.Invisible, true)
     dad.setFlag(SpriteFlag.Ghost, true)
     mom.setFlag(SpriteFlag.Invisible, true)
     mom.setFlag(SpriteFlag.Ghost, true)
+    mySprite2 = sprites.create(img`
+. . . . e e e e e e . . . . . . 
+. . . e d d d d d d e . . . . . 
+. . . d d f d d f d d . . . . . 
+. . . d d f d d f d d . . . . . 
+. . . d d d d d d d d . . . . . 
+. . 4 4 4 4 4 4 4 4 4 4 . . . . 
+. . d 4 4 4 4 4 4 4 4 d . . . . 
+. . d 4 4 4 4 4 4 4 4 d . . . . 
+. . d 6 6 6 6 6 6 6 6 d . . . . 
+. . . 6 6 6 6 6 6 6 6 . . . . . 
+. . . 6 6 6 6 6 6 6 6 . . . . . 
+. . . . 6 . . . . 6 . . . . . . 
+. . . . 6 . . . . 6 . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.cpu)
+    Quest = "Quest 1"
+    sprites.setDataString(mySprite2, "npc", "house giy")
+    tiles.placeOnRandomTile(mySprite2, myTiles.tile6)
 }
 function Quest2 (mySprite: Sprite, mySprite2: Sprite) {
     if (Quest == "Quest 2") {
@@ -498,33 +550,21 @@ function Quest2 (mySprite: Sprite, mySprite2: Sprite) {
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.cpu, function (sprite, otherSprite) {
     if (Quest == "Quest 1") {
-        if (sprites.readDataBoolean(otherSprite, "house giy")) {
+        if (sprites.readDataString(otherSprite, "npc") == "house giy") {
             game.splash("" + name + " go get your mom and dad")
             game.showLongText("Quest get mom and dad", DialogLayout.Top)
             pause(500)
         } else {
-            if (sprites.readDataBoolean(otherSprite, "mom")) {
+            if (sprites.readDataString(otherSprite, "npc") == "mom" || sprites.readDataString(otherSprite, "npc") == "dad") {
                 game.splash("what Tom`s house was destroyed.")
-                otherSprite.setFlag(SpriteFlag.Invisible, true)
-                otherSprite.setFlag(SpriteFlag.Ghost, true)
                 dad.setFlag(SpriteFlag.Invisible, true)
                 dad.setFlag(SpriteFlag.Ghost, true)
+                mom.setFlag(SpriteFlag.Invisible, true)
+                mom.setFlag(SpriteFlag.Ghost, true)
                 tiles.placeOnTile(mom, tiles.getTileLocation(24, 5))
                 tiles.placeOnTile(dad, tiles.getTileLocation(23, 5))
                 Quest = "Quest 2"
                 pause(500)
-            } else {
-                if (sprites.readDataBoolean(otherSprite, "dad")) {
-                    game.splash("what Tom`s house was destroyed.")
-                    otherSprite.setFlag(SpriteFlag.Invisible, true)
-                    otherSprite.setFlag(SpriteFlag.Ghost, true)
-                    dad.setFlag(SpriteFlag.Invisible, true)
-                    dad.setFlag(SpriteFlag.Ghost, true)
-                    tiles.placeOnTile(mom, tiles.getTileLocation(24, 5))
-                    tiles.placeOnTile(dad, tiles.getTileLocation(23, 5))
-                    Quest = "Quest 2"
-                    pause(500)
-                }
             }
         }
     } else {
@@ -625,27 +665,6 @@ b 1 b 1 1 b b 1 1 b b 1 1 b b 1 1 b b 1 1 b b b
 `)
     game.splash("Boom")
     game.showLongText("Quest investigate the sound!", DialogLayout.Top)
-    mySprite2 = sprites.create(img`
-. . . . e e e e e e . . . . . . 
-. . . e d d d d d d e . . . . . 
-. . . d d f d d f d d . . . . . 
-. . . d d f d d f d d . . . . . 
-. . . d d d d d d d d . . . . . 
-. . 4 4 4 4 4 4 4 4 4 4 . . . . 
-. . d 4 4 4 4 4 4 4 4 d . . . . 
-. . d 4 4 4 4 4 4 4 4 d . . . . 
-. . d 6 6 6 6 6 6 6 6 d . . . . 
-. . . 6 6 6 6 6 6 6 6 . . . . . 
-. . . 6 6 6 6 6 6 6 6 . . . . . 
-. . . . 6 . . . . 6 . . . . . . 
-. . . . 6 . . . . 6 . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.cpu)
-    Quest = "Quest 1"
-    sprites.setDataBoolean(mySprite2, "house giy", true)
-    tiles.placeOnRandomTile(mySprite2, myTiles.tile6)
     statusbar = statusbars.create(20, 2, StatusBarKind.Health)
     statusbar.setColor(2, 15, 4)
     statusbar.setLabel("HP")
@@ -658,7 +677,7 @@ function house () {
             mySprite2.setFlag(SpriteFlag.Ghost, true)
             tiles.placeOnTile(mySprite, tiles.getTileLocation(6, 5))
             tiles.setTilemap(tiles.createTilemap(
-            hex`10001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001918181a181818000000000000000000191c1c1c1c1c19000000000000000000191c0f10111c19000000000000000000191c1217161c19000000000000000000191c1217161c19000000000000000000191c1217161c19000000000000000000191c1217161c19000000000000000000191c1314151c19000000000000000000191d1c1c1c1e19000000000000000000181818181818180000000000000000000000000000000000000000000000000000000000000000000000000000`,
+            hex`10001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001918181a181818000000000000000000191c1c1c1c1c19000000000000000000191c0f10111c19000000000000000000191c1217161c19000000000000000000191c1217161c19000000000000000000191c1217161c19000000000000000000191c1217161c19000000000000000000191c1314151c19000000000000000000191d1c1c1c1c19000000000000000000181818181818180000000000000000000000000000000000000000000000000000000000000000000000000000`,
             img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -697,7 +716,32 @@ function house () {
     } else {
         if (mySprite.tileKindAt(TileDirection.Top, myTiles.tile16)) {
             if (controller.A.isPressed()) {
-                tiles.setTilemap(tiles.createTilemap(
+                if (Quest == "Quest 3") {
+                    tiles.setTilemap(tiles.createTilemap(
+            hex`1e001000050505050505090a05050505050505050e0e0e0e0e0e0e0e0e0e0e0e0e0e1515151515151717151515151515151515151515151515151515151515152310232323230708000100000100000000000000000000000000001c1c1c0000000100000708000100000000000000000000001800111213001c1c1c00000000000007060c0c0c0c0c0c0c0c0c0c0c0c0c0c00000000001c1c1c000e000000000b0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d00000000001c1c1c0000000000000000000000000001000000000000000000000000001c1c1c00000000010000000e0000000000000000000000000000000000001c1c1c0000000100000000000005010000000000000000000000000000001c1c1c04040404040404000000000000000000000000000000000000001f1c1c1c0303030303030404040404040404040404040404000000000000001d1d1d0303030303030303030303030303030303030304040404040404041c1c1c030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303`,
+            img`
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . . . . 
+2 2 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+. 2 . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 
+. . . . . . . . . . . . . . . . . . . . . 2 . . . . . 2 2 2 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 
+. . . . . . . . . . 2 . . . . . . . . . . . . . . . . 2 2 2 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 
+2 2 2 2 2 2 . . . . . . . . . . . . . . . . . . . . . 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+`,
+            [myTiles.tile0,sprites.castle.tileGrass1,sprites.castle.tileGrass3,myTiles.tile1,myTiles.tile2,sprites.builtin.forestTiles0,sprites.castle.tilePath5,sprites.castle.tilePath4,sprites.castle.tilePath6,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.castle.tilePath7,sprites.castle.tilePath2,sprites.castle.tilePath8,sprites.castle.tileGrass2,sprites.castle.tilePath3,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile16,sprites.castle.saplingOak,sprites.castle.rock1,myTiles.tile17,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile21,myTiles.tile22],
+            TileScale.Sixteen
+        ))
+                } else {
+                    tiles.setTilemap(tiles.createTilemap(
             hex`1e001000050505050505090a05050505050505050e0e0e0e0e0e0e0e0e0e0e0e0e0e1515151515151717151515151515151515151515151515151515151515151410141414140708000100000100000000000000000000000000001c1c1c0000000100000708000100000000000000000000001800111213001c1c1c00000000000007060c0c0c0c0c0c0c0c0c0c0c0c0c0c00000000001c1c1c000e000000000b0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d00000000001c1c1c0000000000000000000000000001000000000000000000000000001c1c1c00000000010000000e0000000000000000000000000000000000001c1c1c0000000100000000000005010000000000000000000000000000001c1c1c0404040404040400000000000000000000000000000000000000001c1c1c0303030303030404040404040404040404040404000000000000001d1d1d0303030303030303030303030303030303030304040404040404041c1c1c030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303`,
             img`
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . . . . 
@@ -720,6 +764,7 @@ function house () {
             [myTiles.tile0,sprites.castle.tileGrass1,sprites.castle.tileGrass3,myTiles.tile1,myTiles.tile2,sprites.builtin.forestTiles0,sprites.castle.tilePath5,sprites.castle.tilePath4,sprites.castle.tilePath6,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.castle.tilePath7,sprites.castle.tilePath2,sprites.castle.tilePath8,sprites.castle.tileGrass2,sprites.castle.tilePath3,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile16,sprites.castle.saplingOak,sprites.castle.rock1,myTiles.tile17,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile21,myTiles.tile22],
             TileScale.Sixteen
         ))
+                }
                 scene.setBackgroundColor(7)
                 tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 3))
                 mySprite2.setFlag(SpriteFlag.Invisible, false)
@@ -748,11 +793,11 @@ function tilemaps (myImage: Image, mySprite: Sprite, myImage2: Image, COOL_STUFF
     }
 }
 let statusbar: StatusBarSprite = null
-let mySprite2: Sprite = null
 let name = ""
-let Quest = ""
+let mySprite2: Sprite = null
 let mom: Sprite = null
 let dad: Sprite = null
+let Quest = ""
 let locashon: tiles.Location = null
 let mySprite: Sprite = null
 let item: Sprite = null
@@ -761,6 +806,7 @@ cpus()
 forever(function () {
     house()
     tilemaps(myTiles.tile17, mySprite, sprites.dungeon.floorDark2, "watering can")
+    tilemaps(myTiles.tile18, mySprite, sprites.dungeon.floorDark2, "hammer")
 })
 forever(function () {
     music.playTone(880, music.beat(BeatFraction.Half))
