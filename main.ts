@@ -706,10 +706,18 @@ function Quest2 (mySprite: Sprite, mySprite2: Sprite) {
         }
     }
     if (Quest == "Quest 3") {
-        if (sprites.readDataString(mySprite, "npc") == "cat") {
-            game.splash("I need fish", "the Cat")
-            game.showLongText("Quest go get some fish.", DialogLayout.Top)
+        if (sprites.readDataString(item, "thing") == "fish") {
+            game.splash("thanks for the fish", "Cat")
+            game.splash("I think I should stay with you.", "Cat")
+            Quest = "Quest 4"
+            mySprite.follow(mySprite, 50)
             pause(500)
+        } else {
+            if (sprites.readDataString(mySprite, "npc") == "cat") {
+                game.splash("I need fish", "Cat")
+                game.showLongText("Quest go get some fish.", DialogLayout.Top)
+                pause(500)
+            }
         }
     }
 }
@@ -720,7 +728,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.cpu, function (sprite, otherSpri
             game.showLongText("Quest get mom and dad", DialogLayout.Top)
             pause(500)
         } else {
-            if (sprites.readDataString(otherSprite, "npc") == "mom" || sprites.readDataString(otherSprite, "npc") == "dad") {
+            if (sprites.readDataString(otherSprite, "npc") == "mom") {
                 game.splash("what Tom`s house was destroyed.")
                 dad.setFlag(SpriteFlag.Invisible, true)
                 dad.setFlag(SpriteFlag.Ghost, true)
@@ -730,6 +738,18 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.cpu, function (sprite, otherSpri
                 tiles.placeOnTile(dad, tiles.getTileLocation(23, 5))
                 Quest = "Quest 2"
                 pause(500)
+            } else {
+                if (sprites.readDataString(otherSprite, "npc") == "dad") {
+                    game.splash("what Tom`s house was destroyed.")
+                    dad.setFlag(SpriteFlag.Invisible, true)
+                    dad.setFlag(SpriteFlag.Ghost, true)
+                    mom.setFlag(SpriteFlag.Invisible, true)
+                    mom.setFlag(SpriteFlag.Ghost, true)
+                    tiles.placeOnTile(mom, tiles.getTileLocation(24, 5))
+                    tiles.placeOnTile(dad, tiles.getTileLocation(23, 5))
+                    Quest = "Quest 2"
+                    pause(500)
+                }
             }
         }
     } else {
