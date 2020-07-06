@@ -402,6 +402,63 @@ d d d d e e e e e e e e d d d d
 7 7 7 7 e e e e e e e 7 7 7 7 7 
 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
 `
+    //% blockIdentity=images._tile
+    export const tile23 = img`
+f f f f f f f f f f f f f f f f 
+e e e e e e e e e e e e f e e e 
+e e e e e e e e e e e e f e e e 
+f f f f f f f f f f f f f f f f 
+f e e e e e e e f e e e e e e e 
+f e e e e e e e f e e e e e e e 
+f e e e e e e e f e e e e e e e 
+f f f f f f f f f f f f f f f f 
+e e e f e e e e e e e e e e e e 
+e e e f e e e e e e e e e e e e 
+f f f f f f f f f f f f f f f f 
+e e e e e e e e e e e e e f e e 
+e e e e e e e e e e e e e f e e 
+f f f f f f f f f f f f f f f f 
+e e e e e e e e e e e e e e e e 
+f f f f f f f f f f f f f f f f 
+`
+    //% blockIdentity=images._tile
+    export const tile24 = img`
+. 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+. 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+. 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+. 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+. 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+. 7 7 7 7 . . . 7 . . 7 7 . 7 7 
+. 7 7 7 7 . 7 . 7 . 7 7 . . . 7 
+. 7 7 7 7 . . . 7 . . 7 7 . 7 7 
+. 7 7 7 7 . 7 7 7 . 7 7 7 . 7 7 
+7 . 7 7 7 . 7 7 7 . . 7 7 . 7 7 
+7 . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+`
+    //% blockIdentity=images._tile
+    export const tile25 = img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . 6 6 . 6 . . . . . . . 
+. . . . 6 6 6 6 . . . . . . . . 
+. . . . . 6 6 . 6 . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`
 }
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (sprites.readDataString(item, "thing") == "watering can") {
@@ -436,6 +493,66 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
                 if (tilemap.tileIs(tiles.getTileLocation(0, 2), myTiles.tile22) && tilemap.tileIs(tiles.getTileLocation(5, 2), myTiles.tile22) && tilemap.tileIs(tiles.getTileLocation(2, 2), myTiles.tile22) && tilemap.tileIs(tiles.getTileLocation(3, 2), myTiles.tile22) && tilemap.tileIs(tiles.getTileLocation(4, 2), myTiles.tile22)) {
                     game.showLongText("you watered all the flowers", DialogLayout.Top)
                     Quest = "Quest 3"
+                    tiles.setTilemap(tiles.createTilemap(
+            hex`32003200050505050505090a05050505050505051e140e140e140e0e0e0e0e0e0e0e0000000e000000000000001f040303030303030315151515151517171515151515151515151515151515151515151515151500000000000001000000000004030303030303032310232323230708000100000100000000000000000000000000001c1c1c00000100000000000001000004030303030303030000000100000708000100000000000000000000001800111213001c1c1c000000000100000000000000040303030303030300000000000007060c0c0c0c0c0c0c0c0c0c0c0c0c0c00000000001c1c1c0000000000000000000000000403030303030303000e000000000b0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d00000000001c1c1c00000000000000000000000404030303030303030000000000000000000000000001000000000000000000000000001c1c1c000100000000040404040404030303030303030300000000010000000e0000000000000000000000000000000000001c1c1c00000000000404030317170303030303030303030000000100000000000005010000000000000000000000000000001c1c1c000100000404030303171703030303030303030304040404040404000000000000000000000000000000000000001f1c1c1c00000004040303030317170303030303030303030303030303030404040404040404040404040404000000000000001d1d1d00000404030303030317170303030303030303030303030303030303030303030303030303030304040404040404041c1c1c0404040303030303031717030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303171703030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030404040403030303030303030303030303030303030303030303030303030303030303030303030303030303030303030304010101010403030303030303030303030303030303030303030303030303030303030303030303030303030303030303030401010101040303030303030303030303030303030303030303030303030303030303030303030303030303030303030303040100000104030303030303030303030303030303030303030303030303030303030303030303030303030303030303030304010000010403030303030303030303030303030303030303030303030303030303030303030303030303030303030304040401000000040303030303030303030303030303030303030303030303030303030303030303030303030303030303030400000100000004040403030303030303030303030303030303030303030303030303030303030303030303030303030303040000001c000000000403030303030303030303030303030303030303030303030303030303030303030303030303030303041c000000000000000403030303030303030303030303030303030303030303030303030303030303030303030303030303041c0000000000001c040303030303030303030303030303030303030303030303030303030303030303030303030303030304040404000000000404030303030303030303030303030303030303030303030303030303030303030303030303030303030303040400260000040303030303030303030303030303040404040404242424242424242424242424242424242424242424242404000000000004030303030303030303030303030404040404040404242424242424242424242424242424242424242424240404040000000403030303030303030303030303040404040404040424242424242424242424242424242424242424242424040404040404040303030303030303030303030304040000000000040403030303030303030303030303030303030303030303030303030303030303030303030303030303030404000000000004040303030303030303030303030303030303030303030303030303030303030303030303030303030303040400000000000404030303030303030303030303030303030303030303030303030303030303030303030303030303030304040000000000040403030303030303030303030303030303030303030303030303030303030303030303030303030303030404270000000004040303030303030303030303030303030303030303030303030303030303030303030303030303030303040404040404040404030303030303030303030303030303030303030303030303030303030303030303030303030303030304040404040404040403030303030303030303030303030303030303030303030303030303030303030303030303030303030304040404040404040303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030404040404040403030303030303030303030303030303030303030303030303030303030303030303030303030303030304040404040404040403030303030303030303030303030303030303030303030303030303030303030303030303030303030404000000000004040303030303030303030303030303030303030303040404040404040303030303030303030303030303040400000000000404030303030303030303030303030303030303040404000000000004040303030303030303030303030304040000000000040403030303030303030303030303030303030304040000000000000004030303030303030303030303030404000000000004040303030303030303030303030303030303030404000000000000000403030303030303030303030303040400000000000403030303030303030303030303030303030303040400000000000000040303030303030303030303030303040404040404040303030303030303030303030303030303030304040000000000000004030303030303030303030303030303040404040404030303030303030303030303030303030303030404000000000000000403030303030303030303030303030303030303030303030303030303030303030303030303030303030304000000000004040303030303030303030303030303030303030303030303030303030303030303030303030303030303030404040404040403030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303`,
+            img`
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 2 
+2 2 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . . . 2 2 2 2 2 2 2 
+. 2 . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 . . . . . . . . . . . . . 2 2 2 2 2 2 2 
+. . . . . . . . . . . . . . . . . . . . . 2 . . . . . 2 2 2 . . . . . . . . . . . . . 2 2 2 2 2 2 2 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 . . . . . . . . . . . . . 2 2 2 2 2 2 2 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 . . . . . . . . . . . . . 2 2 2 2 2 2 2 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 . . . . . . . . . . . . 2 2 2 2 2 2 2 2 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 . . . . . . . 2 2 . . 2 2 2 2 2 2 2 2 2 
+. . . . . . . . . . 2 . . . . . . . . . . . . . . . . 2 2 2 . . . . . . 2 2 2 . . 2 2 2 2 2 2 2 2 2 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 . . . . . 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 . . . . . . . . . . . . . . . . . . . . . 2 2 2 . . . . 2 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . 2 2 2 . . . 2 2 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . 2 . . . . . 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . 2 . . . . . . . . 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . 2 . . . . . . 2 . 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 
+2 2 2 2 2 2 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 
+2 2 2 2 2 2 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 
+2 2 2 2 2 2 2 . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 . . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 . . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 . . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 . . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 . . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 . . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+`,
+            [myTiles.tile0,sprites.castle.tileGrass1,sprites.castle.tileGrass3,myTiles.tile1,myTiles.tile2,sprites.builtin.forestTiles0,sprites.castle.tilePath5,sprites.castle.tilePath4,sprites.castle.tilePath6,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.castle.tilePath7,sprites.castle.tilePath2,sprites.castle.tilePath8,sprites.castle.tileGrass2,sprites.castle.tilePath3,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile16,sprites.castle.saplingOak,sprites.castle.rock1,myTiles.tile17,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile21,myTiles.tile22,myTiles.tile23,sprites.castle.rock0,myTiles.tile24,myTiles.tile25],
+            TileScale.Sixteen
+        ))
+                    cat.setFlag(SpriteFlag.Invisible, false)
+                    cat.setFlag(SpriteFlag.Ghost, false)
+                    tiles.placeOnRandomTile(cat, myTiles.tile24)
                 }
             }
         }
@@ -463,6 +580,26 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
             tiles.setTileAt(tilemap.locationInDirection(tilemap.locationOfSprite(mySprite), CollisionDirection.Right), myTiles.tile7)
             tiles.setWallAt(tilemap.locationInDirection(tilemap.locationOfSprite(mySprite), CollisionDirection.Right), false)
         }
+    }
+    if (sprites.readDataString(item, "thing") == "fish") {
+        mySprite.setImage(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . e e e e . . . . . . 
+. . . . . e d d d d e . . . . . 
+. . . . e d f d d f d e . . . . 
+. . . . e d f d d f d e . 6 . 6 
+. . . . . d d d d d d . 6 6 6 . 
+. . . . 5 5 5 5 5 5 5 5 d 6 . 6 
+. . . . d 5 5 5 5 5 5 . . . . . 
+. . . . . 6 6 6 6 6 6 . . . . . 
+. . . . . . 6 . . 6 . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`)
     }
 })
 function cpus () {
@@ -532,19 +669,47 @@ function cpus () {
     Quest = "Quest 1"
     sprites.setDataString(mySprite2, "npc", "house giy")
     tiles.placeOnRandomTile(mySprite2, myTiles.tile6)
+    cat = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . 4 4 . 4 4 . . . . . . . . 
+. . . 4 4 . 4 4 . . . . . . . . 
+. . . 4 f 4 f 4 . . . . . . . . 
+. . . 4 f 4 f 4 . . . . . 4 . . 
+. . . e 4 4 4 e . . . . . 4 . . 
+. . . . 4 4 4 . . . . . . 4 . . 
+. . . . 4 4 4 4 e 4 e 4 e 4 . . 
+. . . . 4 4 4 4 4 4 4 4 4 . . . 
+. . . . 4 . 4 . . . 4 . 4 . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.cpu)
+    sprites.setDataString(cat, "npc", "cat")
+    cat.setFlag(SpriteFlag.Invisible, true)
+    cat.setFlag(SpriteFlag.Ghost, true)
 }
 function Quest2 (mySprite: Sprite, mySprite2: Sprite) {
     if (Quest == "Quest 2") {
-        if (sprites.readDataBoolean(mySprite, "mom")) {
+        if (sprites.readDataString(mySprite, "npc") == "mom") {
             game.splash("" + name + " go water the flowers.")
             game.showLongText("Quest go water the flowers.", DialogLayout.Top)
             pause(500)
         } else {
-            if (sprites.readDataBoolean(mySprite, "dad")) {
+            if (sprites.readDataString(mySprite, "npc") == "dad") {
                 game.splash("" + name + " go water the flowers.")
                 game.showLongText("Quest go water the flowers.", DialogLayout.Top)
                 pause(500)
             }
+        }
+    }
+    if (Quest == "Quest 3") {
+        if (sprites.readDataString(mySprite, "npc") == "cat") {
+            game.splash("I need fish", "the Cat")
+            game.showLongText("Quest go get some fish.", DialogLayout.Top)
+            pause(500)
         }
     }
 }
@@ -631,7 +796,7 @@ function start () {
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
 `,
-            [myTiles.tile0,sprites.castle.tileGrass1,sprites.castle.tileGrass3,myTiles.tile1,myTiles.tile2,sprites.builtin.forestTiles0,sprites.castle.tilePath5,sprites.castle.tilePath4,sprites.castle.tilePath6,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.castle.tilePath7,sprites.castle.tilePath2,sprites.castle.tilePath8,sprites.castle.tileGrass2,sprites.castle.tilePath3,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile16,sprites.castle.saplingOak,sprites.castle.rock1,myTiles.tile17,sprites.dungeon.floorDark2,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile21,myTiles.tile22],
+            [myTiles.tile0,sprites.castle.tileGrass1,sprites.castle.tileGrass3,myTiles.tile1,myTiles.tile2,sprites.builtin.forestTiles0,sprites.castle.tilePath5,sprites.castle.tilePath4,sprites.castle.tilePath6,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.castle.tilePath7,sprites.castle.tilePath2,sprites.castle.tilePath8,sprites.castle.tileGrass2,sprites.castle.tilePath3,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile16,sprites.castle.saplingOak,sprites.castle.rock1,myTiles.tile17,sprites.dungeon.floorDark2,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile21,myTiles.tile22,myTiles.tile23,myTiles.tile24,myTiles.tile25],
             TileScale.Sixteen
         ))
     scene.cameraFollowSprite(mySprite)
@@ -696,7 +861,7 @@ function house () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `,
-            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,sprites.dungeon.greenOuterNorth0,sprites.dungeon.greenOuterNorthWest,sprites.dungeon.floorDark3,sprites.dungeon.darkGroundNorthWest0,sprites.dungeon.darkGroundNorth,sprites.dungeon.darkGroundNorthEast0,sprites.dungeon.darkGroundWest,sprites.dungeon.darkGroundSouthWest0,sprites.dungeon.darkGroundSouth,sprites.dungeon.darkGroundSouthEast0,sprites.dungeon.darkGroundEast,sprites.dungeon.darkGroundCenter,myTiles.tile12,myTiles.tile13,myTiles.tile16,sprites.dungeon.floorDark0,sprites.dungeon.floorDark2,myTiles.tile17,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile21,myTiles.tile22],
+            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,sprites.dungeon.greenOuterNorth0,sprites.dungeon.greenOuterNorthWest,sprites.dungeon.floorDark3,sprites.dungeon.darkGroundNorthWest0,sprites.dungeon.darkGroundNorth,sprites.dungeon.darkGroundNorthEast0,sprites.dungeon.darkGroundWest,sprites.dungeon.darkGroundSouthWest0,sprites.dungeon.darkGroundSouth,sprites.dungeon.darkGroundSouthEast0,sprites.dungeon.darkGroundEast,sprites.dungeon.darkGroundCenter,myTiles.tile12,myTiles.tile13,myTiles.tile16,sprites.dungeon.floorDark0,sprites.dungeon.floorDark2,myTiles.tile17,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile21,myTiles.tile22,myTiles.tile23,myTiles.tile24,myTiles.tile25],
             TileScale.Sixteen
         ))
             scene.setBackgroundColor(15)
@@ -710,6 +875,8 @@ function house () {
                 dad.setFlag(SpriteFlag.Ghost, true)
                 mom.setFlag(SpriteFlag.Invisible, true)
                 mom.setFlag(SpriteFlag.Ghost, true)
+                cat.setFlag(SpriteFlag.Invisible, true)
+                cat.setFlag(SpriteFlag.Ghost, true)
             }
             pause(1000)
         }
@@ -717,29 +884,66 @@ function house () {
         if (mySprite.tileKindAt(TileDirection.Top, myTiles.tile16)) {
             if (controller.A.isPressed()) {
                 if (Quest == "Quest 3") {
+                    cat.setFlag(SpriteFlag.Invisible, false)
+                    cat.setFlag(SpriteFlag.Ghost, false)
                     tiles.setTilemap(tiles.createTilemap(
-            hex`1e001000050505050505090a05050505050505050e0e0e0e0e0e0e0e0e0e0e0e0e0e1515151515151717151515151515151515151515151515151515151515152310232323230708000100000100000000000000000000000000001c1c1c0000000100000708000100000000000000000000001800111213001c1c1c00000000000007060c0c0c0c0c0c0c0c0c0c0c0c0c0c00000000001c1c1c000e000000000b0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d00000000001c1c1c0000000000000000000000000001000000000000000000000000001c1c1c00000000010000000e0000000000000000000000000000000000001c1c1c0000000100000000000005010000000000000000000000000000001c1c1c04040404040404000000000000000000000000000000000000001f1c1c1c0303030303030404040404040404040404040404000000000000001d1d1d0303030303030303030303030303030303030304040404040404041c1c1c030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303`,
+            hex`32003200050505050505090a05050505050505051e140e140e140e0e0e0e0e0e0e0e0000000e000000000000001f040303030303030315151515151517171515151515151515151515151515151515151515151500000000000001000000000004030303030303032310232323230708000100000100000000000000000000000000001c1c1c00000100000000000001000004030303030303030000000100000708000100000000000000000000001800111213001c1c1c000000000100000000000000040303030303030300000000000007060c0c0c0c0c0c0c0c0c0c0c0c0c0c00000000001c1c1c0000000000000000000000000403030303030303000e000000000b0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d00000000001c1c1c00000000000000000000000404030303030303030000000000000000000000000001000000000000000000000000001c1c1c000100000000040404040404030303030303030300000000010000000e0000000000000000000000000000000000001c1c1c00000000000404030317170303030303030303030000000100000000000005010000000000000000000000000000001c1c1c000100000404030303171703030303030303030304040404040404000000000000000000000000000000000000001f1c1c1c00000004040303030317170303030303030303030303030303030404040404040404040404040404000000000000001d1d1d00000404030303030317170303030303030303030303030303030303030303030303030303030304040404040404041c1c1c0404040303030303031717030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303171703030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030404040403030303030303030303030303030303030303030303030303030303030303030303030303030303030303030304010101010403030303030303030303030303030303030303030303030303030303030303030303030303030303030303030401010101040303030303030303030303030303030303030303030303030303030303030303030303030303030303030303040100000104030303030303030303030303030303030303030303030303030303030303030303030303030303030303030304010000010403030303030303030303030303030303030303030303030303030303030303030303030303030303030304040401000000040303030303030303030303030303030303030303030303030303030303030303030303030303030303030400000100000004040403030303030303030303030303030303030303030303030303030303030303030303030303030303040000001c000000000403030303030303030303030303030303030303030303030303030303030303030303030303030303041c000000000000000403030303030303030303030303030303030303030303030303030303030303030303030303030303041c0000000000001c040303030303030303030303030303030303030303030303030303030303030303030303030303030304040404000000000404030303030303030303030303030303030303030303030303030303030303030303030303030303030303040400260000040303030303030303030303030303040404040404242424242424242424242424242424242424242424242404000000000004030303030303030303030303030404040404040404242424242424242424242424242424242424242424240404040000000403030303030303030303030303040404040404040424242424242424242424242424242424242424242424040404040404040303030303030303030303030304040000000000040403030303030303030303030303030303030303030303030303030303030303030303030303030303030404000000000004040303030303030303030303030303030303030303030303030303030303030303030303030303030303040400000000000404030303030303030303030303030303030303030303030303030303030303030303030303030303030304040000000000040403030303030303030303030303030303030303030303030303030303030303030303030303030303030404270000000004040303030303030303030303030303030303030303030303030303030303030303030303030303030303040404040404040404030303030303030303030303030303030303030303030303030303030303030303030303030303030304040404040404040403030303030303030303030303030303030303030303030303030303030303030303030303030303030304040404040404040303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030404040404040403030303030303030303030303030303030303030303030303030303030303030303030303030303030304040404040404040403030303030303030303030303030303030303030303030303030303030303030303030303030303030404000000000004040303030303030303030303030303030303030303040404040404040303030303030303030303030303040400000000000404030303030303030303030303030303030303040404000000000004040303030303030303030303030304040000000000040403030303030303030303030303030303030304040000000000000004030303030303030303030303030404000000000004040303030303030303030303030303030303030404000000000000000403030303030303030303030303040400000000000403030303030303030303030303030303030303040400000000000000040303030303030303030303030303040404040404040303030303030303030303030303030303030304040000000000000004030303030303030303030303030303040404040404030303030303030303030303030303030303030404000000000000000403030303030303030303030303030303030303030303030303030303030303030303030303030303030304000000000004040303030303030303030303030303030303030303030303030303030303030303030303030303030303030404040404040403030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303`,
             img`
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . . . . 
-2 2 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-. 2 . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 
-. . . . . . . . . . . . . . . . . . . . . 2 . . . . . 2 2 2 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 
-. . . . . . . . . . 2 . . . . . . . . . . . . . . . . 2 2 2 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 
-2 2 2 2 2 2 . . . . . . . . . . . . . . . . . . . . . 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 2 
+2 2 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . . . 2 2 2 2 2 2 2 
+. 2 . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 . . . . . . . . . . . . . 2 2 2 2 2 2 2 
+. . . . . . . . . . . . . . . . . . . . . 2 . . . . . 2 2 2 . . . . . . . . . . . . . 2 2 2 2 2 2 2 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 . . . . . . . . . . . . . 2 2 2 2 2 2 2 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 . . . . . . . . . . . . . 2 2 2 2 2 2 2 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 . . . . . . . . . . . . 2 2 2 2 2 2 2 2 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 . . . . . . . 2 2 . . 2 2 2 2 2 2 2 2 2 
+. . . . . . . . . . 2 . . . . . . . . . . . . . . . . 2 2 2 . . . . . . 2 2 2 . . 2 2 2 2 2 2 2 2 2 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 . . . . . 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 . . . . . . . . . . . . . . . . . . . . . 2 2 2 . . . . 2 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . 2 2 2 . . . 2 2 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . 2 . . . . . 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . 2 . . . . . . . . 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . 2 . . . . . . 2 . 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 
+2 2 2 2 2 2 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 
+2 2 2 2 2 2 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 
+2 2 2 2 2 2 2 . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 . . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 . . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 . . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 . . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 . . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 . . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
 `,
-            [myTiles.tile0,sprites.castle.tileGrass1,sprites.castle.tileGrass3,myTiles.tile1,myTiles.tile2,sprites.builtin.forestTiles0,sprites.castle.tilePath5,sprites.castle.tilePath4,sprites.castle.tilePath6,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.castle.tilePath7,sprites.castle.tilePath2,sprites.castle.tilePath8,sprites.castle.tileGrass2,sprites.castle.tilePath3,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile16,sprites.castle.saplingOak,sprites.castle.rock1,myTiles.tile17,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile21,myTiles.tile22],
+            [myTiles.tile0,sprites.castle.tileGrass1,sprites.castle.tileGrass3,myTiles.tile1,myTiles.tile2,sprites.builtin.forestTiles0,sprites.castle.tilePath5,sprites.castle.tilePath4,sprites.castle.tilePath6,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.castle.tilePath7,sprites.castle.tilePath2,sprites.castle.tilePath8,sprites.castle.tileGrass2,sprites.castle.tilePath3,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile16,sprites.castle.saplingOak,sprites.castle.rock1,myTiles.tile17,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile21,myTiles.tile22,myTiles.tile23,sprites.castle.rock0,myTiles.tile24,myTiles.tile25],
             TileScale.Sixteen
         ))
+                    tiles.placeOnRandomTile(cat, myTiles.tile24)
                 } else {
                     tiles.setTilemap(tiles.createTilemap(
             hex`1e001000050505050505090a05050505050505050e0e0e0e0e0e0e0e0e0e0e0e0e0e1515151515151717151515151515151515151515151515151515151515151410141414140708000100000100000000000000000000000000001c1c1c0000000100000708000100000000000000000000001800111213001c1c1c00000000000007060c0c0c0c0c0c0c0c0c0c0c0c0c0c00000000001c1c1c000e000000000b0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d00000000001c1c1c0000000000000000000000000001000000000000000000000000001c1c1c00000000010000000e0000000000000000000000000000000000001c1c1c0000000100000000000005010000000000000000000000000000001c1c1c0404040404040400000000000000000000000000000000000000001c1c1c0303030303030404040404040404040404040404000000000000001d1d1d0303030303030303030303030303030303030304040404040404041c1c1c030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303`,
@@ -761,7 +965,7 @@ function house () {
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
 `,
-            [myTiles.tile0,sprites.castle.tileGrass1,sprites.castle.tileGrass3,myTiles.tile1,myTiles.tile2,sprites.builtin.forestTiles0,sprites.castle.tilePath5,sprites.castle.tilePath4,sprites.castle.tilePath6,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.castle.tilePath7,sprites.castle.tilePath2,sprites.castle.tilePath8,sprites.castle.tileGrass2,sprites.castle.tilePath3,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile16,sprites.castle.saplingOak,sprites.castle.rock1,myTiles.tile17,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile21,myTiles.tile22],
+            [myTiles.tile0,sprites.castle.tileGrass1,sprites.castle.tileGrass3,myTiles.tile1,myTiles.tile2,sprites.builtin.forestTiles0,sprites.castle.tilePath5,sprites.castle.tilePath4,sprites.castle.tilePath6,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.castle.tilePath7,sprites.castle.tilePath2,sprites.castle.tilePath8,sprites.castle.tileGrass2,sprites.castle.tilePath3,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile16,sprites.castle.saplingOak,sprites.castle.rock1,myTiles.tile17,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile21,myTiles.tile22,myTiles.tile23,myTiles.tile24,myTiles.tile25],
             TileScale.Sixteen
         ))
                 }
@@ -797,17 +1001,13 @@ let name = ""
 let mySprite2: Sprite = null
 let mom: Sprite = null
 let dad: Sprite = null
+let cat: Sprite = null
 let Quest = ""
 let locashon: tiles.Location = null
 let mySprite: Sprite = null
 let item: Sprite = null
 start()
 cpus()
-forever(function () {
-    house()
-    tilemaps(myTiles.tile17, mySprite, sprites.dungeon.floorDark2, "watering can")
-    tilemaps(myTiles.tile18, mySprite, sprites.dungeon.floorDark2, "hammer")
-})
 forever(function () {
     music.playTone(880, music.beat(BeatFraction.Half))
     music.playTone(784, music.beat(BeatFraction.Half))
@@ -816,4 +1016,10 @@ forever(function () {
     music.playTone(523, music.beat(BeatFraction.Half))
     music.playTone(587, music.beat(BeatFraction.Half))
     music.playTone(784, music.beat(BeatFraction.Half))
+})
+forever(function () {
+    house()
+    tilemaps(myTiles.tile17, mySprite, sprites.dungeon.floorDark2, "watering can")
+    tilemaps(myTiles.tile18, mySprite, sprites.castle.tileGrass3, "hammer")
+    tilemaps(myTiles.tile25, mySprite, sprites.castle.tileGrass3, "fish")
 })
