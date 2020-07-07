@@ -621,7 +621,6 @@ function cpus () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.cpu)
-    sprites.setDataBoolean(dad, "dad", true)
     tiles.placeOnTile(dad, tiles.getTileLocation(4, 8))
     mom = sprites.create(img`
 . . . . e e e e e e . . . . . . 
@@ -641,8 +640,8 @@ function cpus () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.cpu)
-    sprites.setDataString(dad, "npc", "dad")
-    sprites.setDataString(mom, "npc", "mom")
+    sprites.setDataString(dad, "npc", "dad and mom")
+    sprites.setDataString(mom, "npc", "dad and mom")
     tiles.placeOnTile(mom, tiles.getTileLocation(8, 8))
     dad.setFlag(SpriteFlag.Invisible, true)
     dad.setFlag(SpriteFlag.Ghost, true)
@@ -693,16 +692,10 @@ function cpus () {
 }
 function Quest2 (mySprite: Sprite, mySprite2: Sprite) {
     if (Quest == "Quest 2") {
-        if (sprites.readDataString(mySprite, "npc") == "mom") {
+        if (sprites.readDataString(mySprite, "npc") == "dad and mom") {
             game.splash("" + name + " go water the flowers.")
             game.showLongText("Quest go water the flowers.", DialogLayout.Top)
             pause(500)
-        } else {
-            if (sprites.readDataString(mySprite, "npc") == "dad") {
-                game.splash("" + name + " go water the flowers.")
-                game.showLongText("Quest go water the flowers.", DialogLayout.Top)
-                pause(500)
-            }
         }
     }
     if (Quest == "Quest 3") {
@@ -728,7 +721,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.cpu, function (sprite, otherSpri
             game.showLongText("Quest get mom and dad", DialogLayout.Top)
             pause(500)
         } else {
-            if (sprites.readDataString(otherSprite, "npc") == "mom") {
+            if (sprites.readDataString(otherSprite, "npc") == "dad and mom") {
                 game.splash("what Tom`s house was destroyed.")
                 dad.setFlag(SpriteFlag.Invisible, true)
                 dad.setFlag(SpriteFlag.Ghost, true)
@@ -738,18 +731,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.cpu, function (sprite, otherSpri
                 tiles.placeOnTile(dad, tiles.getTileLocation(23, 5))
                 Quest = "Quest 2"
                 pause(500)
-            } else {
-                if (sprites.readDataString(otherSprite, "npc") == "dad") {
-                    game.splash("what Tom`s house was destroyed.")
-                    dad.setFlag(SpriteFlag.Invisible, true)
-                    dad.setFlag(SpriteFlag.Ghost, true)
-                    mom.setFlag(SpriteFlag.Invisible, true)
-                    mom.setFlag(SpriteFlag.Ghost, true)
-                    tiles.placeOnTile(mom, tiles.getTileLocation(24, 5))
-                    tiles.placeOnTile(dad, tiles.getTileLocation(23, 5))
-                    Quest = "Quest 2"
-                    pause(500)
-                }
             }
         }
     } else {
