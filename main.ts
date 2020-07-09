@@ -540,11 +540,11 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         if (mySprite.tileKindAt(TileDirection.Center, myTiles.tile7)) {
             tiles.setTileAt(tilemap.locationOfSprite(mySprite), myTiles.tile20)
             locashon = tilemap.locationOfSprite(mySprite)
-            pause(1000)
+            pause(500)
             tiles.setTileAt(locashon, myTiles.tile20)
-            pause(1000)
+            pause(500)
             tiles.setTileAt(locashon, myTiles.tile19)
-            pause(1000)
+            pause(500)
             tiles.setTileAt(locashon, myTiles.tile22)
             if (Quest == "Quest 2") {
                 if (tilemap.tileIs(tiles.getTileLocation(0, 2), myTiles.tile22) && tilemap.tileIs(tiles.getTileLocation(5, 2), myTiles.tile22) && tilemap.tileIs(tiles.getTileLocation(2, 2), myTiles.tile22) && tilemap.tileIs(tiles.getTileLocation(3, 2), myTiles.tile22) && tilemap.tileIs(tiles.getTileLocation(4, 2), myTiles.tile22)) {
@@ -1531,6 +1531,7 @@ forever(function () {
 forever(function () {
     if (Quest == "Quest 4") {
         cat.follow(mySprite, 50)
+        myEnemy.follow(mySprite, 90)
         Quest = "Quest 5"
     }
 })
